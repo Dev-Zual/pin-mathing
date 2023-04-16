@@ -26,6 +26,12 @@ document.getElementById("calculator").addEventListener("click", function (e) {
   if (isNaN(number)) {
     if (number === "C") {
       calculatorField.value = "";
+    } else if (number === "<") {
+      const digits = calculatorText.split("");
+      digits.pop();
+      const remainingDigits = digits.join("");
+      calculatorField.value = remainingDigits;
+      console.log(number);
     }
   } else {
     const newText = calculatorText + number;
