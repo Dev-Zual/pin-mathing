@@ -1,4 +1,20 @@
+function getPin() {
+  const pin = generatePin();
+  const pinString = pin + "";
+  if (pinString.length === 4) {
+    return pin;
+  } else {
+    return getPin();
+  }
+}
+
+function generatePin() {
+  const random = Math.round(Math.random() * 10000);
+  return random;
+}
+
 document.getElementById("generate-btn").addEventListener("click", function () {
-  const number = Math.floor(Math.random() * 10000) + 1;
-  console.log(number);
+  const pin = getPin();
+  const generateField = document.getElementById("generate-input");
+  generateField.value = pin;
 });
