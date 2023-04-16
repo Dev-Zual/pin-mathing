@@ -18,3 +18,11 @@ document.getElementById("generate-btn").addEventListener("click", function () {
   const generateField = document.getElementById("generate-input");
   generateField.value = pin;
 });
+
+document.getElementById("calculator").addEventListener("click", function (e) {
+  const calculatorField = document.getElementById("calculator-input");
+  const calculatorText = calculatorField.value;
+  const newText = calculatorText + e.target.innerText;
+  calculatorField.value = newText;
+  console.log(e.target.innerText);
+});
