@@ -21,8 +21,29 @@ document.getElementById("generate-btn").addEventListener("click", function () {
 
 document.getElementById("calculator").addEventListener("click", function (e) {
   const calculatorField = document.getElementById("calculator-input");
+  const number = e.target.innerText;
   const calculatorText = calculatorField.value;
-  const newText = calculatorText + e.target.innerText;
-  calculatorField.value = newText;
-  console.log(e.target.innerText);
+  if (isNaN(number)) {
+    if (number === "C") {
+      calculatorField.value = "";
+    }
+  } else {
+    const newText = calculatorText + number;
+    calculatorField.value = newText;
+    console.log(e.target.innerText);
+  }
+});
+
+document.getElementById("submit").addEventListener("click", function () {
+  const calculatorField = document.getElementById("calculator-input");
+  const calculatorText = calculatorField.value;
+
+  const generateField = document.getElementById("generate-input");
+  const generateFieldValue = generateField.value;
+
+  if (generateFieldValue === calculatorText) {
+    alert("pin matched");
+  } else {
+    alert("pin did not matched");
+  }
 });
