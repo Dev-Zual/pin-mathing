@@ -48,8 +48,10 @@ document.getElementById("submit").addEventListener("click", function () {
   const generateFieldValue = generateField.value;
 
   if (generateFieldValue === calculatorText) {
-    alert("pin matched");
+    const matchedMsg = document.getElementById("matched");
+    matchedMsg.style.display = "block";
   } else {
-    alert("pin did not matched");
+    const notMatchedMsg = document.getElementById("not-matched");
+    notMatchedMsg.style.display = "block";
   }
 });
