@@ -31,12 +31,10 @@ document.getElementById("calculator").addEventListener("click", function (e) {
       digits.pop();
       const remainingDigits = digits.join("");
       calculatorField.value = remainingDigits;
-      console.log(number);
     }
   } else {
     const newText = calculatorText + number;
     calculatorField.value = newText;
-    console.log(e.target.innerText);
   }
 });
 
