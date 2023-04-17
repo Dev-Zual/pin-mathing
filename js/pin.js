@@ -47,11 +47,13 @@ document.getElementById("submit").addEventListener("click", function () {
   const generateField = document.getElementById("generate-input");
   const generateFieldValue = generateField.value;
 
+  const matchedMsg = document.getElementById("matched");
+  const notMatchedMsg = document.getElementById("not-matched");
   if (generateFieldValue === calculatorText) {
-    const matchedMsg = document.getElementById("matched");
     matchedMsg.style.display = "block";
+    notMatchedMsg.style.display = "none";
   } else {
-    const notMatchedMsg = document.getElementById("not-matched");
     notMatchedMsg.style.display = "block";
+    matchedMsg.style.display = "none";
   }
 });
